@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/Home_Screen.dart';
 import 'package:todo_app/Themes/my_themes.dart';
@@ -8,6 +9,8 @@ void main()
 async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
+  //if you want to use firebase locally
+  //FirebaseFirestore.instance.disableNetwork();
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {

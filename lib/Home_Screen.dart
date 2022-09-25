@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/List%20Screen/add%20task%20buttonsheet.dart';
 import 'package:todo_app/Themes/my_themes.dart';
 import 'package:todo_app/List%20Screen/list_tab.dart';
 import 'package:todo_app/settings_screen/settings_tab.dart';
@@ -44,7 +45,13 @@ class _HomeScreenState extends State<HomeScreen> {
             borderRadius: BorderRadius.all(Radius.circular(100)),
             side: BorderSide(color: Colors.white)),
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          // showBottomSheet(context: context,
+          showModalBottomSheet(context: context, builder: (context) {
+            return addTaskBottomSheet();
+          },isScrollControlled: true
+          );
+        },
       ),body: tabs[selectedIndex],
     );
   }
